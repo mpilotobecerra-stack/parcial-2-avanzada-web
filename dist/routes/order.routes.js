@@ -1,0 +1,11 @@
+import { Router } from 'express';
+import { OrderController } from '../controllers/orderController.js';
+import { authMiddleware } from '../middlewares/authMiddleware.js';
+import { validateRequest } from '../middlewares/validateRequest.js';
+import { orderSchema, statusSchema } from '../lib/schemas.js';
+const router = Router();
+const controller = new OrderController();
+router.post('/', authMiddleware, validateRequest(orderSchema), controller.create);
+router.get('/:id', authMiddleware, controller.getById);
+router.patch('/:id/status', authMiddleware, validateRequest(statusSchema), controller.updateStatus);
+export default router;
