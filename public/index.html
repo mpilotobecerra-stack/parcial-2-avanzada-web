@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StockFlow Frontend</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>StockFlow</h1>
+    <p>Interfaz para usar la API sin entrar a la base de datos.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Sesión</h2>
+      <div class="grid two-columns">
+        <div>
+          <h3>Registrar</h3>
+          <label>Email<input id="registerEmail" type="email" /></label>
+          <label>Contraseña<input id="registerPassword" type="password" /></label>
+          <label>Rol
+            <select id="registerRole">
+              <option value="OPERATOR">OPERATOR</option>
+              <option value="ADMIN">ADMIN</option>
+            </select>
+          </label>
+          <button id="registerBtn">Registrar</button>
+        </div>
+
+        <div>
+          <h3>Iniciar sesión</h3>
+          <label>Email<input id="loginEmail" type="email" /></label>
+          <label>Contraseña<input id="loginPassword" type="password" /></label>
+          <button id="loginBtn">Iniciar sesión</button>
+        </div>
+      </div>
+
+      <div class="status">
+        <strong>Usuario:</strong> <span id="currentUser">ninguno</span><br />
+        <strong>Rol:</strong> <span id="currentRole">-</span><br />
+        <strong>Token:</strong> <span id="currentToken">sin token</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Productos</h2>
+      <div class="buttons-row">
+        <button id="loadProductsBtn">Ver productos</button>
+        <button id="lowStockBtn">Ver stock bajo</button>
+      </div>
+      <div class="columns">
+        <div>
+          <h3>Crear producto (ADMIN)</h3>
+          <label>Nombre<input id="productName" /></label>
+          <label>SKU<input id="productSku" /></label>
+          <label>Stock<input id="productStock" type="number" min="0" /></label>
+          <label>Stock mínimo<input id="productMinStock" type="number" min="0" /></label>
+          <label>Precio<input id="productPrice" type="number" step="0.01" min="0" /></label>
+          <label>ID categoría<input id="productCategoryId" type="number" min="1" value="1" /></label>
+          <button id="createProductBtn">Crear producto</button>
+        </div>
+        <div>
+          <h3>Buscar pedido</h3>
+          <label>ID pedido<input id="orderIdInput" type="number" min="1" /></label>
+          <button id="loadOrderBtn">Cargar pedido</button>
+          <h3>Crear pedido</h3>
+          <div id="orderItems"></div>
+          <button id="addItemBtn">Agregar ítem</button>
+          <button id="createOrderBtn">Crear pedido</button>
+          <h3>Cambiar estado</h3>
+          <label>ID pedido<input id="orderStatusId" type="number" min="1" /></label>
+          <label>Estado
+            <select id="orderStatusSelect">
+              <option value="PENDING">PENDING</option>
+              <option value="DISPATCHED">DISPATCHED</option>
+              <option value="CANCELLED">CANCELLED</option>
+            </select>
+          </label>
+          <button id="updateOrderBtn">Actualizar estado</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Respuesta</h2>
+      <pre id="output">Aquí se mostrará la respuesta de la API...</pre>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -36,6 +36,9 @@ En esta API se puede:
 Si salió bien, la API queda en:
 http://localhost:3000
 
+También puedes abrir el frontend en el navegador en:
+http://localhost:3000
+
 ## COMO SABER SI FUNCIONA
 
 Puedes usar estas opciones:

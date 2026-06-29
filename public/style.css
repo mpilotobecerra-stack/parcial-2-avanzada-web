@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #222;
+}
+
+header {
+  background: #2b6cb0;
+  color: white;
+  padding: 24px;
+  text-align: center;
+}
+
+main {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 18px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(31, 45, 61, 0.08);
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin: 10px 0 6px;
+  font-size: 0.95rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  margin-top: 4px;
+}
+
+button {
+  background: #2b6cb0;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #2c5282;
+}
+
+pre {
+  background: #f1f5f9;
+  padding: 16px;
+  border-radius: 10px;
+  min-height: 240px;
+  overflow: auto;
+}
+
+.status {
+  margin-top: 16px;
+  padding: 12px;
+  background: #edf2f7;
+  border-radius: 10px;
+}
+
+.grid {
+  display: grid;
+  gap: 18px;
+}
+
+.two-columns {
+  grid-template-columns: 1fr 1fr;
+}
+
+.columns {
+  display: grid;
+  gap: 18px;
+}
+
+.buttons-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  align-items: end;
+  margin-bottom: 10px;
+}
+
+.order-item input {
+  margin-top: 0;
+}
+
+.remove-btn {
+  background: #e53e3e;
+}
+
+@media (max-width: 900px) {
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+}
