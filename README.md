@@ -71,3 +71,10 @@ Si quieres probar rápido, lo más importante es esto:
 1. npm install
 2. npx prisma migrate dev --name init
 3. npm run dev
+
+
+La carpeta src/tests tiene pruebas básicas para revisar que todo responde bien.
+Si quieres probar rápido, lo más importante es esto:
+1. npm install
+2. npx prisma migrate dev --name init
+3. npm run dev
